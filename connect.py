@@ -1,19 +1,21 @@
 # Localhost
 LOCAL_DB_NAME = 'wordpress'
-LOCAL_DB_HOST='localhost'
-LOCAL_DB_USER='root'
-LOCAL_DB_PASSWORD=''
+LOCAL_DB_HOST ='localhost'
+LOCAL_DB_USER ='root'
+LOCAL_DB_PASSWORD ='root'
+
 
 
 # New Host Server
 REMOTE_SERVER_IP = ''
 REMOTE_SERVER_USER = '';
+REMOTE_SERVER_PASSWORD = '';
 REMOTE_SERVER_HTML_DIR = ''
 
 
 # New Host DB
-REMOTE_HOST_DB = ''
 REMOTE_DB_NAME = ''
 REMOTE_DB_HOST ='localhost'
 REMOTE_DB_USER ='root'
 REMOTE_DB_PASSWORD =''
+REMOTE_DB_PORT =''
