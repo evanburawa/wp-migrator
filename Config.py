@@ -9,18 +9,22 @@ class Config:
 
       self.config_file = 'connect.py'
 
+      # Localhost DB
       self._local_db_name = None
       self._local_db_host=None
       self._local_db_user=None
       self._local_db_password=None
+
+      # Localhost Files/Config
+      self._local_wp_folder_path = None
 
 
       #New Host Server
       self._remote_server_ip = None
       self._remote_server_user = None
       self._remote_server_pw = None
-      self._remote_server_html_dir = None
-
+      self._remote_wp_folder_path = None
+      self._ssh_key_filepath = None
 
       # New Host DB
       self._remote_host_db = None
@@ -92,7 +96,22 @@ class Config:
 
     @local_db_password.deleter
     def local_db_password(self):
-        del self._local_db_password 
+        del self._local_db_password
+
+
+
+    # ssh_key_filepath
+    @property
+    def ssh_key_filepath(self):
+        return self._ssh_key_filepath
+
+    @local_db_password.setter
+    def ssh_key_filepath(self, value):
+        self._ssh_key_filepath = value
+
+    @local_db_password.deleter
+    def ssh_key_filepath(self):
+        del self._ssh_key_filepath 
 
 
 
@@ -251,14 +270,15 @@ class Config:
       #New Host Server
       self.remote_server_ip = REMOTE_SERVER_IP
       self.remote_server_user = REMOTE_SERVER_USER
-      self.remote_server_html_dir = REMOTE_SERVER_HTML_DIR
+      self.remote_server_html_dir = REMOTE_WP_FOLDER_PATH
 
 
       # New Host DB
-      self.remote_host_db = REMOTE_HOST_DB
+      self.remote_host_db = REMOTE_DB_NAME
       self.remote_db_host = REMOTE_DB_HOST
       self.remote_db_user = REMOTE_DB_USER
       self.remote_db_password = REMOTE_DB_PASSWORD
+      self.ssh_key_filepath = SSH_KEY_FILEPATH
 
       print(self.local_db_name)
       print(self.local_db_host)

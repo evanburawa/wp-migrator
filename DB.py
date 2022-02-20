@@ -1,6 +1,16 @@
 class DB:
     
-    def __init__(self):
+    def __init__(self, config, server):
+
+      # Instance of Server (to allow for access to run mysql commands on remote server)
+      self.server = server
+
+      self._host = config._db_host
+      self._user = config._db_user
+      self._pw = config._db_password
+      self._port = config._db_port
+      self._db = config._db_name
+
       print('DB loaded')
 
     def set_host(host):
@@ -19,5 +29,5 @@ class DB:
     def connect():
       return
 
-    def upload_files():
+    def export_db():
       return
